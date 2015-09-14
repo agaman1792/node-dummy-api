@@ -44,8 +44,8 @@ test("functionality #generate(name, model)", (t) => {
   };
 
   db.generate(tableName, model);
-  t.equal(db.get(tableName).size(), db.defaults.generatedValues);
-  t.equal(helpers.getSortedKeysAsString(db.get(tableName).first()), helpers.getSortedKeysAsString(model));
+  t.equal(db.get(tableName).length, db.defaults.generatedValues);
+  t.equal(helpers.getSortedKeysAsString(db.get(tableName)[0]), helpers.getSortedKeysAsString(model));
 });
 
 test("functionality #get(name)", (t) => {
@@ -56,5 +56,5 @@ test("functionality #get(name)", (t) => {
 test("functionality #reset()", (t) => {
   t.plan(1);
   db.reset(tableName);
-  t.equal(db.get(tableName).size(), 0);
+  t.equal(db.get(tableName).length, 0);
 });
