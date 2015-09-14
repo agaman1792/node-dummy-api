@@ -1,15 +1,18 @@
 var fs = require("fs");
 var path = require("path");
 
+var strategyUsed = "default hardcoded configuration";
+
 var defaultConfig = {
 	server: {
 		authorization: {
 			enabled: true,
-			type: ["basic", "token"],
-			value: {
-				username: "agaman",
-				password: "12345",
-				token: "12345"
+			basic: {
+				username: "",
+				password: ""
+			},
+			token: {
+				value: ""
 			}
 		},
 		general: {
@@ -18,7 +21,7 @@ var defaultConfig = {
 			loglevel: "trace"
 		},
 		security: {
-			secure: true,
+			enabled: true,
 			cert: "",
 			key: ""
 		}
@@ -40,5 +43,6 @@ var defaultConfig = {
 module.exports = {
 	get: () => {
 		return defaultConfig;
-	}
+	},
+	strategyUsed
 };

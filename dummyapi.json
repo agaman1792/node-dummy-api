@@ -1,13 +1,14 @@
 {
 	"server": {
 		"authorization": {
-			"enabled": true,
-			"type": ["basic", "token"],
-			"value": {
-				"username": "agaman",
-				"password": "12345",
-				"token": "12345"
-			}
+			"enabled": false,
+      "basic": {
+        "username": "",
+        "password": ""
+      },
+      "token": {
+        "value": ""
+      }
 		},
 		"general": {
 			"ports": [8080],

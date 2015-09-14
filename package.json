@@ -17,18 +17,22 @@
     "type": "git",
     "url": "https://github.com/tzoky07/dummy-api"
   },
-  "engines": {"node": ">=4.0"},
+  "engines": {
+    "node": ">=4.0"
+  },
   "devDependencies": {
     "eslint": "^1.4.0"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
+    "chalk": "^1.1.1",
     "chance": "^0.7.7",
     "compression": "^1.5.2",
     "express": "^4.13.3",
     "express-uncapitalize": "^1.0.0",
     "lodash": "^3.10.1",
     "method-override": "^2.3.5",
+    "moment": "^2.10.6",
     "response-time": "^2.3.1",
     "tape": "^4.2.0"
   }

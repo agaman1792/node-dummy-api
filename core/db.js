@@ -6,7 +6,7 @@ function checkDependencyInjection(di) {
   di = di || {};
   di.dbObject = di.dbObject || {};
   di.lodash = di.lodash || require("lodash");
-  di.objectGenerator = di.objectGenerator || require("../generators/object")(di);
+  di.objectGenerator = di.objectGenerator || require("../generators/object")();
   return di;
 }
 

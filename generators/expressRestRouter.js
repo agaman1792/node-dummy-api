@@ -3,7 +3,7 @@ function checkDependencyInjection(di) {
   di.bodyParser = require("body-parser");
   di.express = di.express || require("express");
   di.lodash = di.lodash || require("lodash");
-  di.db = di.db || require("../core/db")(di);
+  di.db = di.db || require("../core/db")();
 
   return di;
 }
@@ -23,13 +23,18 @@ function idExists(coll, id) {
   }
 }
 
+function handleError(res, e) {
+  res.status(400).json({success: false, error: true, message: e.message});
+  console.log(e);
+}
+
 function createRouter(name, model, di) {
   var _ = di.lodash;
   var router = new di.express.Router();
   router.use(di.bodyParser.json());
   // Generate data
   di.db.generate(name, model);
-  // Get all (with url parameters filter)
+  // Get all
   router.get("", (req, res) => {
     res.status(200).json(di.db.get(name));
   });
@@ -41,7 +46,7 @@ function createRouter(name, model, di) {
       idExists(coll, id);
       res.status(200).json(_.find(coll, (model) => {return model.id === id}));
     } catch (e) {
-      res.status(400).json({success: false, error: true, message: e.message});
+      handleError(res, e);
     }
   });
   // Create one
@@ -53,8 +58,7 @@ function createRouter(name, model, di) {
       di.db.get(name).push(obj);
       res.status(200).json({success: true, data: obj});
     } catch(e) {
-      res.status(400).json({success: false, error: true, message: e.message});
-      console.log(e);
+      handleError(res, e);
     }
   });
   // Update one
@@ -67,7 +71,7 @@ function createRouter(name, model, di) {
       di.db.updateById(name, id, obj);
       res.status(200).json({success: true, data: obj});
     } catch(e) {
-      res.status(400).json({success: false, error: true, message: e.message});
+      handleError(res, e);
     }
   });
   // Delete one
@@ -80,7 +84,7 @@ function createRouter(name, model, di) {
       di.db.removeById(name, id);
       res.status(200).json({success: true, removed: id});
     } catch(e) {
-      res.status(400).json({success: false, error: true, message: e.message});
+      handleError(res, e);
     }
   });
 
@@ -90,11 +94,11 @@ function createRouter(name, model, di) {
 module.exports = (di) => {
   di = checkDependencyInjection(di);
 
-  function* expressRouterFactory(name, model) {
+  function* expressRestRouterGenerator(name, model) {
     while(true) {
       yield createRouter(name, model, di);
     }
   }
 
-  return expressRouterFactory;
+  return expressRestRouterGenerator;
 }
