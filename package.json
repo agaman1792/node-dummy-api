@@ -1,12 +1,15 @@
 {
   "name": "dummy-api",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "description": "",
-  "bin": {"dummyapi": "./bin/dummyapi.js"},
+  "bin": {
+    "dummyapi": "./bin/dummyapi.js"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "tape tests/**/*.js"
+    "test": "tape tests/**/*.js",
+    "run": "node ./bin/dummyapi.js"
   },
   "author": "Alex Gaman <alex.gaman@yahoo.com> (https://github.com/tzoky07)",
   "license": "MIT",
