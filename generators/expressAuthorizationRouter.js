@@ -24,10 +24,9 @@ function getAuthParamsFromRequest(req) {
 
 var testAuth = {
   basic: (cfgParams, authParams) => {
-    if (!cfgParams.username || cfgParams.basic.username === authParams.username) {
-      return true;
-    }
-    if (!cfgParams.password || cfgParams.basic.password === authParams.password) {
+    if (!cfgParams.basic.username ||
+          (cfgParams.basic.username === authParams.username
+           && cfgParams.basic.password === authParams.password)) {
       return true;
     }
     return false;

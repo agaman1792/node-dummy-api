@@ -1,0 +1,54 @@
+{
+	"server": {
+		"authorization": {
+			"enabled": false,
+      "basic": {
+        "username": "gigi",
+        "password": "1234"
+      },
+      "token": {
+        "value": "1"
+      }
+		},
+		"general": {
+			"ports": [8080],
+			"prefix": "/api",
+			"loglevel": "TRACE"
+		},
+		"security": {
+			"enabled": false,
+			"cert": "",
+			"key": ""
+		}
+	},
+	"api": {
+		"configFilePath": "",
+		"modelsPath": "",
+		"routes": [{
+	    "path": "/address",
+	    "model": {
+	      "address": "address",
+	      "city": "city",
+	      "country": "country"
+	    }
+	  }, {
+	    "path": "/users",
+	    "model": {
+	      "name": {
+          "first": "first",
+          "last": "last"
+        },
+        "birthday": "birthday",
+        "cc": {
+          "number": "cc",
+          "expiry": "exp",
+          "cash": "dollar"
+        },
+        "email": "email",
+        "address": "address",
+        "phone": "phone",
+        "ssn": "ssn"
+	    }
+	  }]
+	}
+}

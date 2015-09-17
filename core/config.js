@@ -1,48 +1,46 @@
 var fs = require("fs");
 var path = require("path");
+var defaultConfig = require("./config-default.json");
 
-var strategyUsed = "default hardcoded configuration";
+var configFileName = ".dummyapi";
+var envVarName = "DUMMY_API_CONFIG";
 
-var defaultConfig = {
-	server: {
-		authorization: {
-			enabled: true,
-			basic: {
-				username: "",
-				password: ""
-			},
-			token: {
-				value: ""
-			}
-		},
-		general: {
-			ports: [8080],
-			prefix: "/api",
-			loglevel: "trace"
-		},
-		security: {
-			enabled: true,
-			cert: "",
-			key: ""
-		}
-	},
-	api: {
-		configFilePath: "",
-		modelsPath: "",
-		routes: [{
-	    path: "/address",
-	    model: {
-	      address: "address",
-	      city: "city",
-	     	country: "country"
-	    }
-	  }]
+function getCfgFromProjectRoot() {
+	try {
+		return JSON.parse(fs.readFileSync(process.env.PWD + path.sep + configFileName));
+	} catch(e) {
+		return false;
 	}
-};
+}
+
+function getCfgFromEnvironment() {
+	try {
+		return JSON.parse(process.env[envVarName]);
+	} catch(e) {
+		return false;
+	}
+}
+
+function getCfg() {
+	var cfg = getCfgFromProjectRoot();
+	if (cfg) {
+		cfg.strategyUsed = ".dummyapi file from project root directory";
+		return cfg;
+	}
+
+	cfg = getCfgFromEnvironment();
+	if (cfg) {
+		cfg.strategyUsed = "DUMMY_API_CONFIG environment variable";
+		return cfg;
+	}
+
+	cfg = defaultConfig;
+	cfg.strategyUsed = "default configuration";
+	return cfg;
+}
 
 module.exports = {
 	get: () => {
-		return defaultConfig;
-	},
-	strategyUsed
+		return getCfg();
+	}
 };

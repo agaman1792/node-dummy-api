@@ -36,7 +36,7 @@ function serverConfigurationPrinter() {
   connectionAddress += cfg.server.general.ports[0];
   connectionAddress += cfg.server.general.prefix;
 
-  print({color: "yellow", message: `Using the ${config.strategyUsed}`});
+  print({color: "yellow", message: `Using the ${cfg.strategyUsed}`});
   print({color: "yellow", message: `Api prefix:   ${cfg.server.general.prefix}`});
   print({color: "yellow", message: `Port:         ${cfg.server.general.ports[0]}`});
   print({color: "yellow", message: `Secure:       ${cfg.server.security.enabled}`});

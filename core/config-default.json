@@ -1,19 +1,19 @@
 {
-	"server": {
+  "server": {
 		"authorization": {
 			"enabled": false,
-      "basic": {
-        "username": "",
-        "password": ""
-      },
-      "token": {
-        "value": ""
-      }
+			"basic": {
+				"username": "",
+				"password": ""
+			},
+			"token": {
+				"value": ""
+			}
 		},
 		"general": {
 			"ports": [8080],
 			"prefix": "/api",
-			"loglevel": "TRACE"
+			"loglevel": "trace"
 		},
 		"security": {
 			"enabled": true,
@@ -29,7 +29,7 @@
 	    "model": {
 	      "address": "address",
 	      "city": "city",
-	      "country": "country"
+	     	"country": "country"
 	    }
 	  }]
 	}

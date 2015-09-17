@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "",
-  "bin": {
-    "dummyapi": "./bin/dummyapi.js"
-  },
+  "bin": "./bin/dummyapi.js",
   "main": "index.js",
   "scripts": {
     "test": "tape tests/**/*.js",
