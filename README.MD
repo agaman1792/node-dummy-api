@@ -19,12 +19,21 @@ Dummy Api. _The lightweight alternative to bulky servers._
   * Long version:
 
         # Create the /opt/nodejs directory (if it does not exist) and switch to it
+
         mkdir -p /opt/nodejs/ && cd /opt/nodejs
+
         # Grab the repository contents and switch to the project root directory
+
         git clone https://github.com/tzoky07/dummy-api.git && cd dummy-api
+
         # Install the dependencies
+
         npm install
+
         # Install the package globally
+
         npm install -g .
+
         # Run the dummy-api command to see if everything is in order
+
         dummy-api
