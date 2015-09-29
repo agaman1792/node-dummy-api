@@ -37,4 +37,4 @@ module.exports = (di) => {
       di.templateServer.listen(8080, cb);
     }
   };
-}
+};

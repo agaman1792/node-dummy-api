@@ -2,18 +2,18 @@ var chalk = require("chalk");
 var moment = require("moment");
 var config = require("./config");
 
-function print(what) {
-  what = what || {};
-  var color = what.color || "white";
-  var message = what.message || "";
-  console.log(colorMixin(color)(message));
-}
-
 function colorMixin(color) {
   if (!chalk[color]) {
     throw new Error("Color not supported!");
   }
   return chalk[color];
+}
+
+function print(what) {
+  what = what || {};
+  var color = what.color || "white";
+  var message = what.message || "";
+  console.log(colorMixin(color)(message));
 }
 
 function osDetailsPrinter() {

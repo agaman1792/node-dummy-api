@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var server = require("../factories/appServer")();
 var printer = require("../core/printer");
 
