@@ -14,11 +14,7 @@ Dummy Api. _The lightweight alternative to bulky servers._
 
   * Short version:
 
-        mkdir -p /opt/nodejs/ && cd /opt/nodejs \
-        git clone https://github.com/tzoky07/dummy-api.git && cd dummy-api \
-        npm install \
-        npm install -g . \
-        dummy-api
+        mkdir -p /opt/nodejs/ && cd /opt/nodejs && git clone https://github.com/tzoky07/dummy-api.git && cd dummy-api && npm install && npm install -g . && dummy-api
 
   * Long version:
 
