@@ -1,7 +1,7 @@
 {
-  "name": "dummy-api",
+  "name": "node-dummy-api",
   "version": "0.0.2",
-  "private": true,
+  "preferGlobal": true,
   "description": "",
   "bin": "./bin/dummyapi.js",
   "main": "index.js",
