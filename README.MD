@@ -14,33 +14,8 @@ What does it do ?
 How do I install this ?
 -----------------------
 
-  It is not yet published on NPM but you can use the command(s) below to get this. The "short version" will get you right set up.
-
-  * Short version:
-
-        mkdir -p /opt/nodejs/ && cd /opt/nodejs && git clone https://github.com/tzoky07/dummy-api.git && cd dummy-api && npm install && npm install -g . && dummy-api
-
-  * Long version:
-
-        # Create the /opt/nodejs directory (if it does not exist) and switch to it
-
-        mkdir -p /opt/nodejs/ && cd /opt/nodejs
-
-        # Grab the repository contents and switch to the project root directory
-
-        git clone https://github.com/tzoky07/dummy-api.git && cd dummy-api
-
-        # Install the dependencies
-
-        npm install
-
-        # Install the package globally
-
-        npm install -g .
-
-        # Run the dummy-api command to see if everything is in order
-
-        dummy-api
+  NPM: node-dummy-api (prefer global install)
+        npm install -g node-dummy-api
 
 How would I use this and why ?
 ------------------------------
