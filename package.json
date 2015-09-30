@@ -1,7 +1,7 @@
 {
-  "name": "dummy-api",
+  "name": "node-dummy-api",
   "version": "0.0.2",
-  "private": true,
+  "preferGlobal": true,
   "description": "",
   "bin": "./bin/dummyapi.js",
   "main": "index.js",
@@ -36,5 +36,6 @@
     "moment": "^2.10.6",
     "response-time": "^2.3.1",
     "tape": "^4.2.0"
-  }
+  },
+  "keywords": ["dummy api", "node api", "generated", "generator", "api", "fake", "fake data", "fake api", "random data", "random api"]
 }
