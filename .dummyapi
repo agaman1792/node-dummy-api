@@ -44,7 +44,7 @@
           "expiry": "exp",
           "cash": "dollar"
         },
-        "email": "email",
+        "email": ["alex.gaman@yahoo.com"],
         "address": "address",
         "phone": "phone",
         "ssn": "ssn"
