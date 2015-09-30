@@ -29,7 +29,7 @@
 	    "model": {
 	      "address": "{{address.secondaryAddress}}",
 	      "city": "{{address.city}}",
-	      "country": "{{address.country}}"
+	      "country": ["Romania"]
 	    }
 	  }, {
 	    "path": "/users",

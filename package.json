@@ -1,6 +1,6 @@
 {
   "name": "dummy-api",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "private": true,
   "description": "",
   "bin": "./bin/dummyapi.js",
@@ -14,6 +14,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/tzoky07/dummy-api"
+  },
+  "bugs": {
+    "url": "https://github.com/tzoky07/dummy-api/issues"
   },
   "engines": {
     "node": ">=4.0"
