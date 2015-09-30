@@ -56,6 +56,7 @@ How would I use this and why ?
   And why would you need this...
 
   To begin with, this tool started with a deep desire not to depend on third-party apis (servers) in order to develop the front-end functionality (since in most of the cases, the back-end and front-end projects are separated). This includes possible issues like but not limited to:
+  
     * High load produced by the server causing the local development environment to be horribly slow.
     * Increased development speed since you don't have to wait for eventual middleware issues to be fixed.
     * Independent development, since you can write the application and the tests, all there's left to do at the end being the integration between the systems.
