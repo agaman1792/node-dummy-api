@@ -27,28 +27,18 @@
 		"routes": [{
 	    "path": "/address",
 	    "model": {
-	      "address": "address",
-	      "city": "city",
-	      "country": "country"
+	      "address": "{{address.secondaryAddress}}",
+	      "city": "{{address.city}}",
+	      "country": "{{address.country}}"
 	    }
 	  }, {
 	    "path": "/users",
 	    "model": {
 	      "name": {
-          "first": "first",
-          "last": "last"
-        },
-        "birthday": "birthday",
-        "cc": {
-          "number": "cc",
-          "expiry": "exp",
-          "cash": "dollar"
-        },
-        "email": ["alex.gaman@yahoo.com"],
-        "address": "address",
-        "phone": "phone",
-        "ssn": "ssn"
-	    }
+          "first": "{{name.firstName}}",
+          "last": "{{name.lastName}}"
+        }
+			}
 	  }]
 	}
 }

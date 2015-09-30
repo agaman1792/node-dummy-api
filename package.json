@@ -24,10 +24,10 @@
   "dependencies": {
     "body-parser": "^1.13.3",
     "chalk": "^1.1.1",
-    "chance": "^0.7.7",
     "compression": "^1.5.2",
     "express": "^4.13.3",
     "express-uncapitalize": "^1.0.0",
+    "faker": "^3.0.1",
     "lodash": "^3.10.1",
     "method-override": "^2.3.5",
     "moment": "^2.10.6",

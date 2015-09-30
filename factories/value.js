@@ -1,15 +1,15 @@
-var chance = new (require("chance"))();
+var faker = require("faker");
 
 function isValidProperty(propertyName) {
-  return (chance[propertyName]) ? true : false;
+  return (faker.fake(propertyName)) ? true : false;
 }
 
 function get(propertyName) {
   if (!isValidProperty(propertyName)) {
-    throw new Error(`Property ${property} invalid!`);
+    throw new Error(`Property ${propertyName} invalid!`);
   }
 
-  return chance[propertyName]();
+  return faker.fake(propertyName);
 }
 
 module.exports = get;
