@@ -1,6 +1,6 @@
 {
   "name": "node-dummy-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "preferGlobal": true,
   "description": "",
   "bin": "./bin/dummyapi.js",
