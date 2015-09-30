@@ -1,6 +1,6 @@
 {
   "name": "node-dummy-api",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "preferGlobal": true,
   "description": "The lightweight alternative to bulky API servers",
   "bin": "./bin/dummyapi.js",
