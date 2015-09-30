@@ -15,6 +15,7 @@ How do I install this ?
 -----------------------
 
   NPM: node-dummy-api (prefer global install)
+  
         npm install -g node-dummy-api
 
 How would I use this and why ?
