@@ -1,6 +1,6 @@
 {
   "name": "node-dummy-api",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "preferGlobal": true,
   "description": "The lightweight alternative to bulky API servers",
   "bin": "./bin/dummyapi.js",
@@ -37,5 +37,10 @@
     "response-time": "^2.3.1",
     "tape": "^4.2.0"
   },
-  "keywords": ["dummy api", "node api", "generated", "generator", "api", "fake", "fake data", "fake api", "random data", "random api"]
+  "keywords": [
+    "api", "dummy", "fake", "generated", "generator", "random",
+    "dummy api", "fake api", "node api", "generated api", "api generator", "random api",
+    "fake data", "random data", "generated data", "data generator", "random data",
+    "dummy api server", "fake api server", "generated api server", "api server generator", "random api server"
+  ]
 }
