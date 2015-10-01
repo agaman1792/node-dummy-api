@@ -72,7 +72,7 @@ function creditsNStuffPrinter() {
   print({color: colors.header, message: "*** Other stuff ***"});
   print({color: colors.body, message: "If you have any ideas about how to make this utility better, feel free to: "});
   print({color: colors.body, message: " * Send me an e-mail: alex.gaman@yahoo.com"});
-  print({color: colors.body, message: " * Grab the code, materialize your idea and send a pull request: https://github.com/tzoky07/dummy-api"});
+  print({color: colors.body, message: ` * Grab the code, materialize your idea and send a pull request: ${pck.repository.url}`});
   print({color: colors.body, message: `If you see something annoying, this is the best place to say it: ${pck.bugs.url}`});
   print();
   print({color: colors.body, message: `Listening on port ${cfg.server.general.port} ${securedText}`});

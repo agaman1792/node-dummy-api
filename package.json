@@ -1,6 +1,6 @@
 {
   "name": "node-dummy-api",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "preferGlobal": true,
   "description": "The lightweight alternative to bulky API servers",
   "bin": "./bin/dummyapi.js",
@@ -13,16 +13,17 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tzoky07/dummy-api"
+    "url": "https://github.com/tzoky07/node-dummy-api"
   },
   "bugs": {
-    "url": "https://github.com/tzoky07/dummy-api/issues"
+    "url": "https://github.com/tzoky07/node-dummy-api/issues"
   },
   "engines": {
     "node": ">=4.0"
   },
   "devDependencies": {
-    "eslint": "^1.4.0"
+    "eslint": "^1.4.0",
+    "tape": "^4.2.0"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
@@ -34,8 +35,7 @@
     "lodash": "^3.10.1",
     "method-override": "^2.3.5",
     "moment": "^2.10.6",
-    "response-time": "^2.3.1",
-    "tape": "^4.2.0"
+    "response-time": "^2.3.1"
   },
   "keywords": [
     "api", "dummy", "fake", "generated", "generator", "random",

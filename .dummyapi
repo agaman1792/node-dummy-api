@@ -24,17 +24,8 @@
 	    "path": "/address",
 	    "model": {
 	      "address": "{{address.secondaryAddress}}",
-	      "city": "{{address.city}}",
 	      "country": ["Romania"]
 	    }
-	  }, {
-	    "path": "/users",
-	    "model": {
-	      "name": {
-          "first": "{{name.firstName}}",
-          "last": "{{name.lastName}}"
-        }
-			}
 	  }]
 	}
 }

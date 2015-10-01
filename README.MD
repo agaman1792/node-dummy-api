@@ -50,7 +50,7 @@ To begin with, this tool started with a deep desire not to depend on third-party
   * The configuration file structure is documented a bit below
   * Open a terminal in the project root directory
   * Run the following command:
-        dummy-api
+        node-dummy-api
 
 <a name="section-four"></a>The configuration file
 ----------------------
@@ -62,7 +62,7 @@ To begin with, this tool started with a deep desire not to depend on third-party
   * (Alternative) Environment variable name: DUMMY_API_CONFIG
 
   **Configuration file explained**:
-  ```json
+  ```js
   {
     // Server configuration
     "server": {
