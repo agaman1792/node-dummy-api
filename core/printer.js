@@ -37,13 +37,13 @@ function osDetailsPrinter() {
 function serverConfigurationPrinter() {
   var cfg = config.get();
   var baseUrl = (cfg.server.security.enabled) ? "https://localhost:" : "http://localhost:";
-  baseUrl += cfg.server.general.ports[0];
+  baseUrl += cfg.server.general.port;
   baseUrl += cfg.server.general.prefix;
 
   print({color: colors.header, message: `*** Configuration details ***`});
   print({color: colors.body, message: `Using the ${cfg.strategyUsed}`});
   print({color: colors.body, message: `Api prefix:   ${cfg.server.general.prefix}`});
-  print({color: colors.body, message: `Port:         ${cfg.server.general.ports[0]}`});
+  print({color: colors.body, message: `Port:         ${cfg.server.general.port}`});
   print({color: colors.body, message: `Secure:       ${cfg.server.security.enabled}`});
   print({color: colors.body, message: `Auth enabled: ${cfg.server.authorization.enabled}`});
   print({color: colors.body, message: `Url:          ${baseUrl}`});
@@ -53,7 +53,7 @@ function serverConfigurationPrinter() {
 function serverEndpointDetailsPrinter() {
   var cfg = config.get();
   var baseUrl = (cfg.server.security.enabled) ? "https://localhost:" : "http://localhost:";
-  baseUrl += cfg.server.general.ports[0];
+  baseUrl += cfg.server.general.port;
   baseUrl += cfg.server.general.prefix;
 
   print({color: colors.header, message: "*** Api endpoints ***"});
@@ -75,7 +75,7 @@ function creditsNStuffPrinter() {
   print({color: colors.body, message: " * Grab the code, materialize your idea and send a pull request: https://github.com/tzoky07/dummy-api"});
   print({color: colors.body, message: `If you see something annoying, this is the best place to say it: ${pck.bugs.url}`});
   print();
-  print({color: colors.body, message: `Listening on port ${cfg.server.general.ports[0]} ${securedText}`});
+  print({color: colors.body, message: `Listening on port ${cfg.server.general.port} ${securedText}`});
   print({color: colors.body, message: `App version: ${pck.version}`});
   print({color: colors.body, message: `Press CTRL + C to kill the server`});
 }

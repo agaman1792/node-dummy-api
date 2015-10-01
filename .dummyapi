@@ -2,16 +2,12 @@
 	"server": {
 		"authorization": {
 			"enabled": false,
-      "basic": {
-        "username": "gigi",
-        "password": "1234"
-      },
       "token": {
         "value": "1"
       }
 		},
 		"general": {
-			"ports": [8080],
+			"port": 8080,
 			"prefix": "/api",
 			"loglevel": "TRACE"
 		},

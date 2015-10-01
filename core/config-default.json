@@ -1,36 +1,34 @@
 {
   "server": {
-		"authorization": {
-			"enabled": false,
-			"basic": {
-				"username": "",
-				"password": ""
-			},
-			"token": {
-				"value": ""
-			}
-		},
-		"general": {
-			"ports": [8080],
-			"prefix": "/api",
-			"loglevel": "trace"
-		},
-		"security": {
-			"enabled": true,
-			"cert": "",
-			"key": ""
-		}
-	},
-	"api": {
-		"configFilePath": "",
-		"modelsPath": "",
-		"routes": [{
-	    "path": "/address",
-	    "model": {
-	      "address": "address",
-	      "city": "city",
-	     	"country": "country"
-	    }
-	  }]
-	}
+    "authorization": {
+      "enabled": false,
+      "token": {
+        "value": ""
+      }
+    },
+    "general": {
+      "port": 8080,
+      "prefix": "/api",
+      "loglevel": "trace"
+    },
+    "security": {
+      "enabled": true,
+      "cert": "",
+      "key": ""
+    }
+  },
+  "api": {
+    "configFilePath": "",
+    "modelsPath": "",
+    "routes": [
+      {
+        "path": "/address",
+        "model": {
+          "address": "address",
+          "city": "city",
+          "country": "country"
+        }
+      }
+    ]
+  }
 }

@@ -34,7 +34,7 @@ module.exports = (di) => {
 
   return {
     start: (cb) => {
-      di.templateServer.listen(8080, cb);
+      di.templateServer.listen(di.config.get().server.general.port, cb);
     }
   };
 };
