@@ -50,6 +50,7 @@ To begin with, this tool started with a deep desire not to depend on third-party
   * The configuration file structure is documented a bit below
   * Open a terminal in the project root directory
   * Run the following command:
+  
         node-dummy-api
 
 <a name="section-four"></a>The configuration file
