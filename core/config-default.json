@@ -12,7 +12,7 @@
       "loglevel": "trace"
     },
     "security": {
-      "enabled": true,
+      "enabled": false,
       "cert": "",
       "key": ""
     }
@@ -22,11 +22,25 @@
     "modelsPath": "",
     "routes": [
       {
-        "path": "/address",
+        "path": "/users",
         "model": {
-          "address": "address",
-          "city": "city",
-          "country": "country"
+          "name": {
+            "first": "{{name.firstName}}",
+            "last": "{{name.lastName}}"
+          },
+          "address": {
+            "city": "{{address.city}}",
+            "zipCode": "{{address.zipCode}}",
+            "street": "{{address.streetAddress}}",
+            "secondary": "{{address.secondaryAddress}}"
+          },
+          "job": {
+            "company": "{{company.companyName}}",
+            "title": "{{name.title}}",
+            "type": "{{name.jobType}}"
+          },
+          "email": "{{internet.email}}",
+          "phone": "{{phone.phoneNumberFormat}}"
         }
       }
     ]

@@ -1,3 +1,4 @@
+var _ = require("lodash");
 var fs = require("fs");
 var path = require("path");
 var defaultConfig = require("./config-default.json");
@@ -25,18 +26,18 @@ function getCfg() {
 	var cfg = getCfgFromProjectRoot();
 	if (cfg) {
 		cfg.strategyUsed = ".dummyapi file from project root directory";
-		return cfg;
+		return _.defaultsDeep(cfg, defaultConfig);
 	}
 
 	cfg = getCfgFromEnvironment();
 	if (cfg) {
 		cfg.strategyUsed = "DUMMY_API_CONFIG environment variable";
-		return cfg;
+		return _.defaultsDeep(cfg, defaultConfig);
 	}
 
 	cfg = defaultConfig;
 	cfg.strategyUsed = "default configuration";
-	return cfg;
+	return defa;
 }
 
 module.exports = {
