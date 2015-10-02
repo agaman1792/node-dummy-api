@@ -35,8 +35,9 @@ To begin with, this tool started with a deep desire not to depend on third-party
 -----------------------
 
   NPM: node-dummy-api (prefer global install)
-
-        npm install -g node-dummy-api
+  ```bash
+    npm install -g node-dummy-api
+  ```
 
 <a name="section-three"></a>How would I use this and why ?
 ------------------------------
@@ -52,7 +53,9 @@ To begin with, this tool started with a deep desire not to depend on third-party
   * The configuration file structure is documented a bit below
   * Open a terminal in the project root directory
   * Run the following command (as node-dummy-api prefers a global install):
-        node-dummy-api
+  ```bash
+    node-dummy-api
+  ```
 
 <a name="section-four"></a>The configuration file
 ----------------------
