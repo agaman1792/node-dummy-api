@@ -53,6 +53,7 @@ To begin with, this tool started with a deep desire not to depend on third-party
   * The configuration file structure is documented a bit below
   * Open a terminal in the project root directory
   * Run the following command (as node-dummy-api prefers a global install):
+
   ```bash
     node-dummy-api
   ```
@@ -70,6 +71,7 @@ To begin with, this tool started with a deep desire not to depend on third-party
 
   **Configuration file explained**:
   <a name="config-file-explained"></a>
+
   ```js
   {
     // Server configuration
@@ -114,6 +116,7 @@ To begin with, this tool started with a deep desire not to depend on third-party
 
   **A simple model**
   <a name="a-simple-model"></a>
+
   ```js
   "model": {
       "foo": ["a", "b", "c"],
@@ -123,10 +126,10 @@ To begin with, this tool started with a deep desire not to depend on third-party
   The keys _foo_ and _bar_ in our case represent object properties that we want to find in our REST API.
 
   The value _["a", "b", "c"]_ instructs the program to choose a random value in the array and assign it to the object
-    * If the value is an array, choose a random value and use it as output
+  * *If the value is an array, choose a random value and use it as output*
 
   The value _"{{address.city}}"_ instructs the program to choose a random city and assign it to the object.
-    * If the value is a string, find the method that will produce the output
+  * *If the value is a string, find the method that will produce the output*
 
 <a name="random-data-docs"></a>
   For generating random data, the program uses [faker.js](https://github.com/Marak/faker.js), the possible values are (remember to write the argument in mustache-like format: _{{x.y.z}}_):
