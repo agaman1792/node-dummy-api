@@ -1,10 +1,10 @@
 {
   "name": "node-dummy-api",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "preferGlobal": true,
   "description": "The lightweight alternative to bulky API servers",
   "bin": "./bin/dummyapi.js",
-  "main": "index.js",
+  "main": "./bin/dummyapi.js",
   "scripts": {
     "test": "tape tests/**/*.js",
     "run": "node ./bin/dummyapi.js"
