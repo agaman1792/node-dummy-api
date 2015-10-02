@@ -66,6 +66,8 @@ To begin with, this tool started with a deep desire not to depend on third-party
   * File name: .dummyapi
   * (Alternative) Environment variable name: DUMMY_API_CONFIG
 
+  _**Note: You don't have to specify all the keys in your configuration file. You can just define the options that you want to customize. If an option is not specified, its value is set as the default value. Default values can be found here: ./core/config-default.json**_
+
   **Configuration file explained**:
   <a name="config-file-explained"></a>
   ```js
@@ -112,7 +114,7 @@ To begin with, this tool started with a deep desire not to depend on third-party
 
   **A simple model**
   <a name="a-simple-model"></a>
-  ```json
+  ```js
   "model": {
       "foo": ["a", "b", "c"],
       "bar": "{{address.city}}"
