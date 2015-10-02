@@ -11,6 +11,7 @@ Table of contents
 * [How do I install this ?](#section-two)
 * [How would I use this and why ?](#section-three)
 * [The configuration file](#section-four)
+  * [A simple model](#a-simple-model)
   * [Configuration file explained](#config-file-explained)
   * [Possible random data keys](#random-data-docs)
 * [Other important things](#section-five)
@@ -111,17 +112,20 @@ To begin with, this tool started with a deep desire not to depend on third-party
   A model is just an object, with the key representing the name of the property and the value representing how you want the future value to be generated.
 
   **A simple model**
+  <a name="a-simple-model"></a>
   ```json
   "model": {
-    "foo": ["a", "b", "c"],
-    "bar": "{{address.city}}"
+      "foo": ["a", "b", "c"],
+      "bar": "{{address.city}}"
   }
   ```
   The keys _foo_ and _bar_ in our case represent object properties that we want to find in our REST API.
 
   The value _["a", "b", "c"]_ instructs the program to choose a random value in the array and assign it to the object
+    * If the value is an array, choose a random value and use it as output
 
-  The value _{{address.city}}_ instructs the program to choose a random city and assign it to the object.
+  The value _"{{address.city}}"_ instructs the program to choose a random city and assign it to the object.
+    * If the value is a string, find the method that will produce the output
 
   For generating random data, the program uses [faker.js](https://github.com/Marak/faker.js), the possible values are (remember to write the argument in mustache-like format: _{{x.y.z}}_)
   <a name="random-data-docs"></a>
