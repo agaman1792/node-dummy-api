@@ -2,7 +2,7 @@
 var injector = require("./dependencyInjector");
 
 var lodash = injector.get("lodash");
-var objectGenerator = injector.get("../generators/object")();
+var objectGenerator = injector.get("../generators/object");
 
 var dbObject = {};
 var defaults = {

@@ -1,23 +1,19 @@
-function checkDependencyInjection(di) {
-  di = di || {};
-  di.express = di.express || require("express");
-  di.bodyParser = require("body-parser");
-  di.compression = require("compression");
-  di.methodOverride = require("method-override");
-  di.uncapitalize = require("express-uncapitalize");
-  di.responseTime = require("response-time");
+// Load the dependencies injector
+var injector = require("../core/dependencyInjector");
 
-  return di;
-}
+var express = injector.get("express");
+var bodyParser = injector.get("body-parser");
+var compression = injector.get("compression");
+var methodOverride = injector.get("method-override");
+var uncapitalize = injector.get("express-uncapitalize");
+var responseTime = injector.get("response-time");
 
-module.exports = (di) => {
-  di = checkDependencyInjection(di);
-
-  var server = di.express();
-  server.use(di.bodyParser.json());
-  server.use(di.compression());
-  server.use(di.methodOverride());
-  server.use(di.uncapitalize());
-  server.use(di.responseTime());
+module.exports = (function() {
+  var server = express();
+  server.use(bodyParser.json());
+  server.use(compression());
+  server.use(methodOverride());
+  server.use(uncapitalize());
+  server.use(responseTime());
   return server;
-}
+}())

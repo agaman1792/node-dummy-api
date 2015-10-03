@@ -1,1 +1,10 @@
-{}
+{
+  "server": {
+    "authorization": {
+      "enabled": true,
+      "token": {
+        "value": "123"
+      }
+    }
+  }
+}
