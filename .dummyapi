@@ -5,6 +5,11 @@
       "token": {
         "value": "123"
       }
+    },
+    "security": {
+      "enabled": true,
+      "cert": "/home/alex/Documents/certificates/certificate.pem",
+      "key": "/home/alex/Documents/certificates/key.key"
     }
   }
 }

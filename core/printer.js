@@ -16,6 +16,12 @@ function print(what) {
   console.log(colorMixin(color)(message));
 }
 
+function printif(what, condition) {
+  if (condition) {
+    print(what);
+  }
+}
+
 var colors = {
   header: "cyan",
   body: "blue"
@@ -45,7 +51,10 @@ function serverConfigurationPrinter() {
   print({color: colors.body, message: `Api prefix:   ${cfg.server.general.prefix}`});
   print({color: colors.body, message: `Port:         ${cfg.server.general.port}`});
   print({color: colors.body, message: `Secure:       ${cfg.server.security.enabled}`});
+  printif({color: colors.body, message: `Key file:     ${cfg.server.security.key}`}, cfg.server.security.enabled);
+  printif({color: colors.body, message: `Cert file:    ${cfg.server.security.cert}`}, cfg.server.security.enabled);
   print({color: colors.body, message: `Auth enabled: ${cfg.server.authorization.enabled}`});
+  printif({color: colors.body, message: `Auth token:   ${cfg.server.authorization.token.value}`}, cfg.server.authorization.enabled);
   print({color: colors.body, message: `Url:          ${baseUrl}`});
   print();
 }

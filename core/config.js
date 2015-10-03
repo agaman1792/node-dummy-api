@@ -8,7 +8,6 @@ var envVarName = "DUMMY_API_CONFIG";
 
 function getCfgFromProjectRoot() {
 	try {
-		console.log(process.env.PWD + path.sep + configFileName);
 		return JSON.parse(fs.readFileSync(process.env.PWD + path.sep + configFileName));
 	} catch(e) {
 		console.trace(e);
