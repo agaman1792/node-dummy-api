@@ -8,7 +8,6 @@ function get(propertyName) {
   if (!isValidProperty(propertyName)) {
     throw new Error(`Property ${propertyName} invalid!`);
   }
-
   return faker.fake(propertyName);
 }
 

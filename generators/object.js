@@ -1,3 +1,9 @@
+// Load the dependencies injector
+var injector = require("../core/dependencyInjector");
+
+var arrayValueFactory = injector.get("../factories/arrayValue");
+var valueFactory = injector.get("../factories/value");
+
 function eachKey(obj, cb) {
   for (var property in obj) {
     if (obj.hasOwnProperty(property)) {
@@ -6,62 +12,32 @@ function eachKey(obj, cb) {
   }
 }
 
-// TODO: Treat extraArgs as rest parameter
-function objectTypeHandler(variable, handlers, extraArgs) {
-  var printType = function(v) {console.log(`Variable type is ${(Array.isArray(v)) ? 'array' : typeof v}`); }
-  handlers = handlers || {};
-  handlers.array = handlers.array || printType;
-  handlers.object = handlers.object || printType;
-  handlers.string = handlers.string || printType;
-
-  // It would be cool to check from the most particular type towards the general (code logic looks cooler)
-  
-  // Check if the variable is a string
-  if (typeof variable === typeof "") {
-    return handlers.string(variable, extraArgs);
-  }
-
-  // Check if variable is an array
-  if (Array.isArray(variable)) {
-    return handlers.array(variable, extraArgs);
-  }
-
-  // Check if the variable is an object.
-  // http://stackoverflow.com/questions/8511281/check-if-a-variable-is-an-object-in-javascript
-  if (variable !== null && typeof variable === 'object') {
-    return handlers.object(variable, extraArgs);
-  }
-}
-
-function checkDependencyInjection(di) {
-  di = di || {};
-  di.arrayValueFactory = di.arrayValueFactory || require("../factories/arrayValue");
-  di.valueFactory = di.valueFactory || require("../factories/value");
-
-  return di;
-}
-
-function createObject(model, di) {
+function createObject(model) {
   var obj = {};
-  var valueFactory = di.valueFactory;
-  eachKey(model, (key, val) => {
-    obj[key] = objectTypeHandler(val, {
-      array: di.arrayValueFactory,
-      object: createObject,
-      string: di.valueFactory
-    }, di);
+
+  eachKey(model, (key, value) => {
+    // Check if the model key value is a string
+    if (typeof value === typeof "") {
+      obj[key] = valueFactory(value);
+    }
+
+    // Check if variable is an array
+    if (Array.isArray(value)) {
+      obj[key] = arrayValueFactory(value);
+    }
+
+    // Check if the variable is an object.
+    // http://stackoverflow.com/questions/8511281/check-if-a-variable-is-an-object-in-javascript
+    if (value !== null && typeof value === 'object') {
+      obj[key] = createObject(value);
+    }
   });
+
   return obj;
 }
 
-module.exports = (di) => {
-  di = checkDependencyInjection(di);
-
-  function* objectGenerator(model) {
-    while (true) {
-      yield createObject(model, di);
-    }
+module.exports = function* objectGenerator(model) {
+  while (true) {
+    yield createObject(model);
   }
-
-  return objectGenerator;
 }

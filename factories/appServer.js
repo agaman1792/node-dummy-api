@@ -1,17 +1,16 @@
-function checkDependencyInjection(di) {
-  di = di || {};
-  di.express = di.express || require("express");
-  di.lodash = di.lodash || require("lodash");
-  di.config = di.config || require("../core/config");
-  di.xpRestRouterGen = di.xpRestRouterGen || require("../generators/expressRestRouter");
-  di.xpAuthRouterGen = di.xpAuthRouterGen || require("../generators/expressAuthorizationRouter")();
-  di.templateServer = di.templateServer || require("../express/templateServer")();
-  return di;
-}
+// Load the dependencies injector
+var injector = require("../core/dependencyInjector");
 
-function mapConfigRoutes(di, cfgRoutes) {
+var express = injector.get("express");
+var lodash = injector.get("lodash");
+var config = injector.get("../core/config");
+var xpRestRouterGen = injector.get("../generators/expressRestRouter");
+var xpAuthRouterGen = injector.get("../generators/expressAuthorizationRouter");
+var templateServer = injector.get("../express/templateServer");
+
+function mapConfigRoutes(cfgRoutes) {
   return cfgRoutes.map((route) => {
-    var routerIterator = di.xpRestRouterGen(route.path, route.model);
+    var routerIterator = xpRestRouterGen(route.path, route.model);
     return {
       path: route.path,
       handler: routerIterator.next().value
@@ -19,22 +18,20 @@ function mapConfigRoutes(di, cfgRoutes) {
   });
 }
 
-module.exports = (di) => {
-  di = checkDependencyInjection(di);
-  var authRouterIterator = di.xpAuthRouterGen();
-  var mainRouter = new di.express.Router();
+module.exports = function() {
+  var authRouterIterator = xpAuthRouterGen();
+  var mainRouter = new express.Router();
 
-  var routes = mapConfigRoutes(di, di.config.get().api.routes);
+  var routes = mapConfigRoutes(config.get().api.routes);
   routes.forEach((route) => {
     mainRouter.use(route.path, route.handler);
   });
-  di.templateServer.use(authRouterIterator.next().value);
-  di.templateServer.use(di.config.get().server.general.prefix, mainRouter);
-
+  templateServer.use(authRouterIterator.next().value);
+  templateServer.use(config.get().server.general.prefix, mainRouter);
 
   return {
     start: (cb) => {
-      di.templateServer.listen(di.config.get().server.general.port, cb);
+      templateServer.listen(config.get().server.general.port, cb);
     }
   };
 };
