@@ -4,6 +4,7 @@
     "blockBindings": true,
     "generators": true,
     "objectLiteralShorthandProperties": true,
+    "objectLiteralShorthandMethods": true,
     "templateStrings": true
   },
   "env": {

@@ -3,7 +3,7 @@ function checkDependencyInjection(di) {
   di.express = di.express || require("express");
   di.lodash = di.lodash || require("lodash");
   di.config = di.config || require("../core/config");
-  di.xpRestRouterGen = di.xpRestRouterGen || require("../generators/expressRestRouter")();
+  di.xpRestRouterGen = di.xpRestRouterGen || require("../generators/expressRestRouter");
   di.xpAuthRouterGen = di.xpAuthRouterGen || require("../generators/expressAuthorizationRouter")();
   di.templateServer = di.templateServer || require("../express/templateServer")();
   return di;
