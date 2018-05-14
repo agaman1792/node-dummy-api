@@ -1,0 +1,27 @@
+[
+    {
+        "path": "/users",
+        "model": {
+            "name": {
+                "first": "{{name.firstName}}",
+                "last": "{{name.lastName}}"
+            },
+            "address": {
+                "city": "{{address.city}}",
+                "zipCode": "{{address.zipCode}}",
+                "street": "{{address.streetAddress}}",
+                "secondary": "{{address.secondaryAddress}}"
+            },
+            "job": {
+                "company": "{{company.companyName}}",
+                "title": "{{name.title}}",
+                "type": "{{name.jobType}}",
+                "place": {
+                    "id": "{{name.firstName}}"
+                }
+            },
+            "email": "{{internet.email}}",
+            "phone": "{{phone.phoneNumberFormat}}"
+        }
+    }
+]

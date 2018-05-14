@@ -1,6 +1,9 @@
 Dummy Api. _The lightweight alternative to bulky API servers._
 ========================================================
 
+After a lot of time, I decided to revamp this project and rewrite it completely along the same idea.
+Stay tuned for updates
+
 *Important: This project has its own personality and feelings. Proceed carefully!*
 
 *Note: The documentation is still in progress and subject to change. As I still have much work to do on this project*
