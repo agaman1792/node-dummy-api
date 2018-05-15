@@ -14,15 +14,28 @@ const RouterFactory = (path, data) => {
   }); 
 
   router.post('/', (req, res) => {
-
+    const obj = req.body;
+    db[path].push(obj);
+    res.status(200).json(obj);
   });
 
   router.put('/:id', (req, res) => {
+    const idx = db[path].findIndex(x => x.id === req.params.id);
 
+    if (idx === -1) return res.status(204).send();
+
+    db[path][idx] = req.body;
+    db[path][idx].id = req.params.id;
+    return res.status(200).json(db[path[idx]]);
   });
 
   router.delete(':/id', (req, res) => {
+    const idx = db[path].findIndex(x => x.id === req.params.id);
 
+    if (idx === -1) return res.status(204).send();
+
+    const removed = db[path][index].splice(idx, 1);
+    return res.status(200).json(removed);
   });
 
   return router;
