@@ -1,6 +1,13 @@
 Dummy Api. _The lightweight alternative to bulky API servers._
 ========================================================
 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/agaman1792/node-dummy-api)
+
+[![HitCount](http://hits.dwyl.io/agaman1792/node-dummy-api.svg)](http://hits.dwyl.io/agaman1792/node-dummy-api)
+
+[![https://nodei.co/npm/node-dummy-api.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/node-dummy-api.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-dummy-api)
+
+
 After a lot of time, I decided to revamp this project and rewrite it completely along the same idea.
 Stay tuned for updates
 
