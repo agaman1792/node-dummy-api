@@ -2,6 +2,7 @@
     {
         "path": "/users",
         "model": {
+            "id": "{{random.number}}",
             "name": {
                 "first": "{{name.firstName}}",
                 "last": "{{name.lastName}}"
@@ -15,10 +16,7 @@
             "job": {
                 "company": "{{company.companyName}}",
                 "title": "{{name.title}}",
-                "type": "{{name.jobType}}",
-                "place": {
-                    "id": "{{name.firstName}}"
-                }
+                "type": "{{name.jobType}}"
             },
             "email": "{{internet.email}}",
             "phone": "{{phone.phoneNumberFormat}}"

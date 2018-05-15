@@ -7,10 +7,12 @@ const CanApply = (value) => {
   if (typeof value !== 'string')
     return false;
 
-  if (!faker.fake[value])
+  try {
+    faker.fake(value);
+    return true;
+  } catch(e) {
     return false;
-
-  return true;
+  }
 };
 
 const Apply = (value) => faker.fake(value);

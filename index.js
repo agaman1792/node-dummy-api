@@ -2,7 +2,6 @@ const config = require('./config');
 const db = require('./db');
 const { CreateObject } = require('./mocking');
 const { PrintHomeScreen } = require('./printer');
-const { StartServer } = require('./server');
 
 config.api.routes.forEach(route => {
   db[route.path] = [];
@@ -13,5 +12,6 @@ config.api.routes.forEach(route => {
   }
 });
 
+const { StartServer } = require('./server');
 PrintHomeScreen();
 StartServer();
