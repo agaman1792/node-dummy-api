@@ -1,12 +1,17 @@
 Dummy Api. _The lightweight alternative to bulky API servers._
 ========================================================
 
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![MIT License](https://img.shields.io/apm/l/vim-mode.svg)](https://opensource.org/licenses/mit-license.php)
+[![Semver](https://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/agaman1792/node-dummy-api)
 
-[![HitCount](http://hits.dwyl.io/agaman1792/node-dummy-api.svg)](http://hits.dwyl.io/agaman1792/node-dummy-api)
+[![bitHound Overall Score](https://www.bithound.io/github/agaman1792/node-dummy-api/badges/score.svg)](https://www.bithound.io/github/agaman1792/node-dummy-api)
+[![bitHound Code](https://www.bithound.io/github/agaman1792/node-dummy-api/badges/code.svg)](https://www.bithound.io/github/agaman1792/node-dummy-api)
+[![bitHound Dependencies](https://www.bithound.io/github/agaman1792/node-dummy-api/badges/dependencies.svg)](https://www.bithound.io/github/agaman1792/node-dummy-api/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/agaman1792/node-dummy-api/badges/devDependencies.svg)](https://www.bithound.io/github/agaman1792/node-dummy-api/master/dependencies/npm)
 
 [![https://nodei.co/npm/node-dummy-api.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/node-dummy-api.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-dummy-api)
-
 
 After a lot of time, I decided to revamp this project and rewrite it completely along the same idea.
 Stay tuned for updates
