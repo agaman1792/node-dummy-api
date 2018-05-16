@@ -6,6 +6,7 @@
   "bin": "./index.js",
   "main": "./index.js",
   "scripts": {
+    "cloc": "cloc --exclude-dir=\"node_modules\" -3 ./",
     "lint": "./node_modules/.bin/eslint ./",
     "run": "node ./index.js"
   },
