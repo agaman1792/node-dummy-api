@@ -1,5 +1,5 @@
 const { sep } = require('path');
-const { SafeJsonFromFile, SafeJsonParse, SafeReadFile } = require('../utilities');
+const { SafeJsonFromFile, SafeJsonParse, SafeReadFile } = require('../utilities/serialization');
 
 const defaultConfig = require('./_default-config');
 

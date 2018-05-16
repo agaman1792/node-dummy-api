@@ -1,12 +1,12 @@
 {
   "name": "node-dummy-api",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "preferGlobal": true,
   "description": "The lightweight alternative to bulky API servers",
-  "bin": "./bin/dummyapi.js",
+  "bin": "./index.js",
   "main": "./index.js",
   "scripts": {
-    "test": "tape tests/**/*.js",
+    "lint": "./node_modules/.bin/eslint ./",
     "run": "node ./index.js"
   },
   "author": {
@@ -31,12 +31,10 @@
     "compression": "^1.7.2",
     "express": "^4.16.3",
     "faker": "^4.1.0",
-    "moment": "^2.22.1",
     "response-time": "^2.3.1"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-recommended": "^2.0.0"
+    "eslint": "^4.19.1"
   },
   "keywords": [
     "api",
