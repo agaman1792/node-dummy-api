@@ -75,7 +75,7 @@ Stay tuned for updates
 
       api: {
         routesPath: string -> if the file specified at this path exists, then the routes will be loaded from this location
-        routes: {
+        routes: [{
           path: string (example: "/users")
           model: {
             "some-key": "<valid-mocking-key>",
@@ -85,7 +85,7 @@ Stay tuned for updates
               "key": "<valid-mocking-key>"
             }
           }
-        }
+        }]
       }
     }
 
