@@ -36,7 +36,6 @@ Stay tuned for updates
 <a name="installation"></a>
 
     npm install -g node-dummy-api
-    yarn global add node-dummy-api
 
 #### 1.2 Quickstart
 <a name="quickstart"></a>
