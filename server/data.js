@@ -10,7 +10,7 @@ const RouterFactory = (path, data) => {
   });
 
   router.get('/:id', (req, res) => {
-    res.status(200).json(db[path].find(x => x.id === req.params.id))
+    res.status(200).json(db[path].find(x => x.id === req.params.id));
   }); 
 
   router.post('/', (req, res) => {
@@ -34,7 +34,7 @@ const RouterFactory = (path, data) => {
 
     if (idx === -1) return res.status(204).send();
 
-    const removed = db[path][index].splice(idx, 1);
+    const removed = db[path].splice(idx, 1);
     return res.status(200).json(removed);
   });
 
