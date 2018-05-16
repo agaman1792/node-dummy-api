@@ -2,8 +2,15 @@
   "name": "node-dummy-api",
   "version": "0.9.5",
   "preferGlobal": true,
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+  }],
+  "homepage": "https://github.com/agaman1792/node-dummy-api",
   "description": "The lightweight alternative to bulky API servers",
-  "bin": "./index.js",
+  "bin": {
+    "node-dummy-api": "./index.js"
+  },
   "main": "./index.js",
   "scripts": {
     "cloc": "cloc --exclude-dir=\"node_modules\" -3 ./",
