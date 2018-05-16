@@ -1,6 +1,6 @@
 {
   "name": "node-dummy-api",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "preferGlobal": true,
   "description": "The lightweight alternative to bulky API servers",
   "bin": "./index.js",
@@ -23,7 +23,7 @@
     "url": "https://github.com/agaman1792/node-dummy-api/issues"
   },
   "engines": {
-    "node": ">=8.0"
+    "node": ">=8.11.2"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

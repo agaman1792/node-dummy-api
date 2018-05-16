@@ -17,7 +17,7 @@ const server = {
 };
 
 const api = {
-  routesPath: `${__dirname}/_default-routes.json`,
+  routesPath: `${__dirname}/routes.json`,
   routes: false
 };
 
