@@ -34,8 +34,7 @@ const RouterFactory = (path, data) => {
 
     if (idx === -1) return res.status(204).send();
 
-    const removed = db[path].splice(idx, 1);
-    return res.status(200).json(removed);
+    return res.status(200).json(db[path].splice(idx, 1));
   });
 
   return router;

@@ -1,7 +1,7 @@
 const { sep } = require('path');
 const { SafeJsonFromFile, SafeJsonParse, SafeReadFile } = require('../utilities/serialization');
 
-const defaultConfig = require('./_default-config');
+const defaultConfig = require('./default');
 
 const CONFIG_FILE_NAME = '.dummyapi';
 const ENV_VAR_NAME = 'DUMMY_API_CONFIG';

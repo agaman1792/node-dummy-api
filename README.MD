@@ -1,28 +1,125 @@
-Dummy Api. _The lightweight alternative to bulky API servers._
-========================================================
-
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![MIT License](https://img.shields.io/apm/l/vim-mode.svg)](https://opensource.org/licenses/mit-license.php)
-[![Semver](https://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/agaman1792/node-dummy-api)
-
-[![bitHound Overall Score](https://www.bithound.io/github/agaman1792/node-dummy-api/badges/score.svg)](https://www.bithound.io/github/agaman1792/node-dummy-api)
+[![npm version](https://img.shields.io/badge/engine-node%20%3E%3D%208.11.2-brightgreen.svg)](https://nodejs.org/dist/v8.11.2/)
+[![Package Quality](http://npm.packagequality.com/shield/node-dummy-api.svg)](http://packagequality.com/#?package=node-dummy-api)
 [![bitHound Code](https://www.bithound.io/github/agaman1792/node-dummy-api/badges/code.svg)](https://www.bithound.io/github/agaman1792/node-dummy-api)
 [![bitHound Dependencies](https://www.bithound.io/github/agaman1792/node-dummy-api/badges/dependencies.svg)](https://www.bithound.io/github/agaman1792/node-dummy-api/master/dependencies/npm)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/agaman1792/node-dummy-api/badges/devDependencies.svg)](https://www.bithound.io/github/agaman1792/node-dummy-api/master/dependencies/npm)
 
 [![https://nodei.co/npm/node-dummy-api.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/node-dummy-api.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-dummy-api)
 
+## The lightweight alternative to bulky API servers
+
+Are you the kind of developer that doesn't want to rely on a working API in order to perform your development routines ? Look no further then
+
 After a lot of time, I decided to revamp this project and rewrite it completely along the same idea.
 Stay tuned for updates
 
-*Important: This project has its own personality and feelings. Proceed carefully!*
+*Note: The documentation is still in progress thus subject to frequent change.*
 
-*Note: The documentation is still in progress and subject to change. As I still have much work to do on this project*
+1. [First steps]()
+    1. [Installation](#installation)
+    2. [Quickstart](#quickstart)
+2. [Usage]()
+    1. [Usage example](#usage-example)
+    2. [Configuration file](#configuration-file)
+    3. [API Route configuration](#api-route-configuration)
+    4. [Available random data keys](#available-random-data-keys)
+3. [Geek stats](#geek-statistics)
+4. [Credits](#credits)
+<!-- 3. [Contributing]()
+    1. [Prerequisites]()
+    2. [Running the tests]()
+    3. [Small guide]() -->
 
-Table of contents
------------------
-* [What does it do ?](#section-one)
+
+#### 1.1 Installation
+<a name="installation"></a>
+
+    npm install -g node-dummy-api
+    yarn global add node-dummy-api
+
+#### 1.2 Quickstart
+<a name="quickstart"></a>
+
+    node-dummy-api
+
+#### 2.1 Usage example
+<a name="usage-example"></a>
+
+- Create a file called .dummyapi anywhere on your hard drive (preferrably in the same root directory)
+- Start a console window located in the same directory
+- As the package prefers to be globally installed, run the package as a command
+
+      node-dummy-api
+
+#### 2.2 Configuration file
+<a name="configuration-file"></a>
+
+    {
+      server: {
+        host: string (default: "localhost")
+        port: number (default: 1337)
+        prefix: string (default: "/api")
+        loglevel: string (default: "trace")
+
+        authentication: {
+          enabled: boolean (default: false)
+          token: string
+        }
+
+        security: {
+          enabled: boolean (default: false)
+          cert: string -> https certificate path
+          key: string -> https signing key path
+        }
+      }
+
+      api: {
+        routesPath: string -> if the file specified at this path exists, then the routes will be loaded from this location
+        routes: {
+          path: string (example: "/users")
+          model: {
+            "some-key": "<valid-mocking-key>",
+            "some-array-key": ["<valid-mocking-key>"],
+            "some-array-key-two": ["<valid-mocking-key>", <size>],
+            "some-object-key": {
+              "key": "<valid-mocking-key>"
+            }
+          }
+        }
+      }
+    }
+
+#### 2.3 API Route configuration
+<a name="api-route-configuration"></a>
+
+- path: any string value that fits your needs (preceeded by /)
+- model: a JSON object, reflecting the structure of your needed API call
+
+- You can use any valid faker random data key in order to generate a property
+- You can generate arrays of random objects
+- You can use nested objects and arrays
+
+#### 2.4 Available random data keys
+<a name="available-random-data-keys"></a>
+
+For generating random data, the program uses [faker.js](https://github.com/Marak/faker.js). Please refer to the library README file for a complete list of options. Don't forget to write the value in handlebars-style format {{x.y.z}}.
+
+#### 3. Geek statistics
+<a name="geek-statistics"></a>
+
+[![JS: 329 loc](https://img.shields.io/badge/JS-329%20loc-yellow.svg)](#geek-statistics)
+[![JSON: 91 loc](https://img.shields.io/badge/JSON-91%20loc-yellow.svg)](#geek-statistics)
+[![JSON: 420 loc](https://img.shields.io/badge/Total-420%20loc-green.svg)](#geek-statistics)
+
+#### 4 Credits
+<a name="credits"></a>
+
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![MIT License](https://img.shields.io/apm/l/vim-mode.svg)](https://opensource.org/licenses/mit-license.php)
+[![Semver](https://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html)
+
+<!-- * [What does it do ?](#section-one)
 * [How do I install this ?](#section-two)
 * [How would I use this and why ?](#section-three)
 * [The configuration file](#section-four)
@@ -284,4 +381,4 @@ To begin with, this tool started with a deep desire not to depend on third-party
 <a name="section-five"></a>Other important things
 ------------
 
-Work in progress...
+Work in progress... -->
