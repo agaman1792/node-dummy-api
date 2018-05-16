@@ -1,7 +1,18 @@
-const { ArrayRandomValue, Range } = require('../utilities');
+const faker = require('faker');
 
-const FakerStrategy = require('./faker');
-const ObjectStrategy = require('./object');
+const { ArrayRandomValue, Range } = require('../utilities/random');
+const { IsArray, IsObject } = require('../utilities/type-checks');
+
+function FakerCanGenerate(value) {
+  if (!value || typeof value !== 'string')
+    return false;
+
+  try {
+    return !!faker.fake(value);
+  } catch(e) {
+    return false;
+  }
+}
 
 function CreateObject(model) {
   let generated = {};
@@ -9,25 +20,11 @@ function CreateObject(model) {
   for (let key in model) {
     const value = model[key];
 
-    if (FakerStrategy.CanApply(value)) {
-      generated[key] = FakerStrategy.Apply(value);
-    }
+    if (FakerCanGenerate(value))
+      generated[key] = faker.fake(value);
 
-    // TODO: Fix this messy implementation (3 levels of recursion for objects)
-    if (ObjectStrategy.CanApply(value)) {
-      generated[key] = Object.keys(value).reduce((acc, curr) => {
-        if (ObjectStrategy.CanApply(value[curr])) {
-          acc[curr] = Object.keys(value[curr]).reduce((_acc, _curr) => {
-            _acc[_curr] = FakerStrategy.Apply(value[curr][_curr]);
-            return _acc;
-          }, {});
-        } else {
-          acc[curr] = FakerStrategy.Apply(value[curr]);
-        }
-
-        return acc;
-      }, {});
-    }
+    if (IsObject(value))
+      generated[key] = CreateObject(value);
   }
 
   return generated;
