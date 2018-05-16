@@ -22,12 +22,12 @@ const environmentConfig = getCfgFromEnvironment();
 
 if (projectRootConfig) {
 	exportedConfig.strategy = `${CONFIG_FILE_NAME} config file located at ${process.env.PWD + sep + CONFIG_FILE_NAME}`;
-	exportedConfig = projectRootConfig;
+	exportedConfig = { ...exportedConfig, ...projectRootConfig };
 }
 
 if (!projectRootConfig && environmentConfig) {
 	exportedConfig.strategy = `${ENV_VAR_NAME} environment variable`;
-	exportedConfig = environmentConfig;
+	exportedConfig = { ...exportedConfig, ...projectRootConfig };
 }
 
 if (!projectRootConfig && !environmentConfig) {

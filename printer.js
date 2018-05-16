@@ -29,14 +29,11 @@ let baseUrl = (config.server.security.enabled) ? 'https://' : 'http://';
     baseUrl += `${config.server.host}:${config.server.port}${config.server.prefix}`;
 
 function PrintOsDetails() {
-  const uptime = (new Date()).toTimeString().split(' ')[0];
-
   print(colors.header, '*** OS details ***');
   print(colors.body, `Hostname: ${os.hostname()}`);
   print(colors.body, `Type:     ${os.type()}`);
   print(colors.body, `Arch:     ${os.arch()}`);
   print(colors.body, `Release:  ${os.release()}`);
-  print(colors.body, `Uptime:   ${uptime} (HH:mm:ss)`);
   print();
 }
 

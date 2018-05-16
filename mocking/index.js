@@ -12,24 +12,26 @@ function CreateObject(model) {
 
     if (FakerCanGenerate(value))
       return {
-        [key]: faker.fake(value),
-        ...acc
+        ...acc,
+        [key]: faker.fake(value)
       };
 
     if (IsArray(value))
       return {
-        [key]: HandleArrayValue(value),
-        ...acc
+        ...acc,
+        [key]: HandleArrayValue(value)
       };
 
     if (IsObject(value))
       return {
-        [key]: CreateObject(value),
-        ...acc
+        ...acc,
+        [key]: CreateObject(value)
       };
 
     return acc;
-  }, {});
+  }, {
+    id: faker.random.uuid()
+  });
 }
 /* jshint ignore:end */
 
