@@ -60,7 +60,7 @@ function ServerEndpointDetailsPrinter() {
   config.api.routes.forEach((route) => {
     print(colors.body, `endpoint ${route.path} (${db[route.path].length} entries): get, post, put, delete routes initialized`);
     print(colors.body, `  * List all:        ${baseUrl + route.path}`);
-    print(colors.body, `  * List one (42th): ${baseUrl + route.path}/${db[route.path][42].id}`);
+    print(colors.body, `  * List one (42nd): ${baseUrl + route.path}/${db[route.path][42].id}`);
   });
   print();
 }

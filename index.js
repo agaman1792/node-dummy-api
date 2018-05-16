@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const config = require('./config');
 const db = require('./db');
 const { CreateObject } = require('./mocking');
