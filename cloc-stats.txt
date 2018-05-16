@@ -1,13 +1,13 @@
-      22 text files.
-classified 22 files      22 unique files.                              
-       6 files ignored.
+      20 text files.
+      20 unique files.
+      10 files ignored.
 
-github.com/AlDanial/cloc v 1.70  T=0.04 s (501.4 files/s, 13873.0 lines/s)
+github.com/AlDanial/cloc v 1.74  T=0.05 s (309.9 files/s, 9237.7 lines/s)
 -------------------------------------------------------------------------------
-Language                     files          blank        comment           code
+Language          files     blank   comment      code    scale   3rd gen. equiv
 -------------------------------------------------------------------------------
-JavaScript                      16             82              2            322
-JSON                             2              0              0             92
+JavaScript           14        78         0       313 x   1.48 =         463.24
+JSON                  2         0         0        86 x   2.50 =         215.00
 -------------------------------------------------------------------------------
-SUM:                            18             82              2            414
+SUM:                 16        78         0       399 x   1.70 =         678.24
 -------------------------------------------------------------------------------
