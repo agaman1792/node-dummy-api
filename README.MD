@@ -24,7 +24,8 @@ Stay tuned for updates
     2. [Configuration file](#configuration-file)
     3. [API Route configuration](#api-route-configuration)
     4. [Available random data keys](#available-random-data-keys)
-3. [Credits]()
+3. [Geek stats](#geek-statistics)
+4. [Credits](#credits)
 <!-- 3. [Contributing]()
     1. [Prerequisites]()
     2. [Running the tests]()
@@ -104,7 +105,15 @@ Stay tuned for updates
 
 For generating random data, the program uses [faker.js](https://github.com/Marak/faker.js). Please refer to the library README file for a complete list of options. Don't forget to write the value in handlebars-style format {{x.y.z}}.
 
-#### 3 Credits
+#### 3. Geek statistics
+<a name="geek-statistics"></a>
+
+[![JS: 329 loc](https://img.shields.io/badge/JS-329%20loc-yellow.svg)](#geek-statistics)
+[![JSON: 91 loc](https://img.shields.io/badge/JSON-91%20loc-yellow.svg)](#geek-statistics)
+[![JSON: 420 loc](https://img.shields.io/badge/Total-420%20loc-green.svg)](#geek-statistics)
+
+#### 4 Credits
+<a name="credits"></a>
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![MIT License](https://img.shields.io/apm/l/vim-mode.svg)](https://opensource.org/licenses/mit-license.php)
