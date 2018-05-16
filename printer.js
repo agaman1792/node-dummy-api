@@ -1,5 +1,4 @@
 const chalk = require('chalk');
-const moment = require('moment');
 const os = require('os');
 
 const config = require('./config');
@@ -30,7 +29,7 @@ let baseUrl = (config.server.security.enabled) ? 'https://' : 'http://';
     baseUrl += `${config.server.host}:${config.server.port}${config.server.prefix}`;
 
 function PrintOsDetails() {
-  const uptime = moment(os.uptime()).format('HH:mm:ss');
+  const uptime = (new Date()).toTimeString().split(' ')[0];
 
   print(colors.header, '*** OS details ***');
   print(colors.body, `Hostname: ${os.hostname()}`);
@@ -70,7 +69,7 @@ function PrintCredits() {
 
   print(colors.header, '*** Other stuff ***');
   print(colors.body, 'If you have any ideas about how to make this utility better, feel free to: ');
-  print(colors.body, ' * Send me an e-mail: alex.gaman@yahoo.com');
+  print(colors.body, ' * Send me an e-mail: alexangru.gaman17@gmail.com');
   print(colors.body, ` * Grab the code, materialize your idea and send a pull request here: ${pck.repository.url}`);
   print(colors.body, ` * Please report issues or improvements here: ${pck.bugs.url}`);
   print(colors.body, ` * Buy me a beer`);

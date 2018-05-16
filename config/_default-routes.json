@@ -18,7 +18,9 @@
                 "title": "{{name.title}}",
                 "type": "{{name.jobType}}"
             },
-            "email": "{{internet.email}}",
+            "emails": [{
+                "addresses": ["{{internet.email}}"]
+            }, 3],
             "phone": "{{phone.phoneNumberFormat}}"
         }
     }

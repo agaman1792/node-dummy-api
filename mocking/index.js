@@ -3,6 +3,36 @@ const faker = require('faker');
 const { ArrayRandomValue, Range } = require('../utilities/random');
 const { IsArray, IsObject } = require('../utilities/type-checks');
 
+const DEFAULT_ARRAY_SIZE = 10;
+
+/* jshint ignore:start */
+function CreateObject(model) {
+  return Object.keys(model).reduce((acc, key) => {
+    const value = model[key];
+
+    if (FakerCanGenerate(value))
+      return {
+        [key]: faker.fake(value),
+        ...acc
+      };
+
+    if (IsArray(value))
+      return {
+        [key]: HandleArrayValue(value),
+        ...acc
+      };
+
+    if (IsObject(value))
+      return {
+        [key]: CreateObject(value),
+        ...acc
+      };
+
+    return acc;
+  }, {});
+}
+/* jshint ignore:end */
+
 function FakerCanGenerate(value) {
   if (!value || typeof value !== 'string')
     return false;
@@ -14,20 +44,20 @@ function FakerCanGenerate(value) {
   }
 }
 
-function CreateObject(model) {
-  let generated = {};
+function HandleArrayValue(value) {
+  const [ model, size ] = value;
+  let mapper = () => false;
 
-  for (let key in model) {
-    const value = model[key];
+  if (FakerCanGenerate(model))
+    return Range(size || DEFAULT_ARRAY_SIZE).map(() => faker.fake(model));
 
-    if (FakerCanGenerate(value))
-      generated[key] = faker.fake(value);
+  if (IsArray(model))
+    return Range(size || DEFAULT_ARRAY_SIZE).map(() => HandleArrayValue(model));
 
-    if (IsObject(value))
-      generated[key] = CreateObject(value);
-  }
+  if (IsObject(model))
+    return Range(size || DEFAULT_ARRAY_SIZE).map(() => CreateObject(model));
 
-  return generated;
+  return Range(size || DEFAULT_ARRAY_SIZE).map(mapper);
 }
 
 module.exports = {

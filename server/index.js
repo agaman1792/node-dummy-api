@@ -5,7 +5,7 @@ const authentication = require('./authentication');
 const data = require('./data');
 const middleware = require('./middleware');
 
-const { SafeReadFile } = require('../utilities');
+const { SafeReadFile } = require('../utilities/serialization');
 const config = require('../config').server;
 
 const server = data(authentication(middleware(express())));
